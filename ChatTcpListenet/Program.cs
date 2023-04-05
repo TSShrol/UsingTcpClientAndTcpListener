@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ChatTcpListener
 {
@@ -17,30 +18,34 @@ namespace ChatTcpListener
                 byte[] data = new byte[1024];
                 while (true)
                 {
-                    TcpClient tcpClient = tcpListener.AcceptTcpClient();
-                    Console.WriteLine($"Client connected... {tcpClient.Client.RemoteEndPoint}");
-                    stream = tcpClient.GetStream();
-                    byte[] myReadBuffer = new byte[1024];
-                    StringBuilder builder = new StringBuilder();
-                    int bytes= 0;
-                    while (true) {
-                        do
+                    Task.Run(() =>
+                    {
+                        TcpClient tcpClient = tcpListener.AcceptTcpClient();
+                        Console.WriteLine($"Client connected... {tcpClient.Client.RemoteEndPoint}");
+                        stream = tcpClient.GetStream();
+                        byte[] myReadBuffer = new byte[1024];
+                        StringBuilder builder = new StringBuilder();
+                        int bytes = 0;
+                        while (true)
                         {
-                            bytes = stream.Read(data);
-                            builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
-                        } while (stream.DataAvailable);
+                            do
+                            {
+                                bytes = stream.Read(data);
+                                builder.Append(Encoding.Unicode.GetString(data, 0, bytes));
+                            } while (stream.DataAvailable);
 
-                        Console.WriteLine("You received the following message : " + builder);
+                            Console.WriteLine("You received the following message : " + builder);
 
-                        string message = Encoding.Unicode.GetString(data);
-                        Console.WriteLine($"{DateTime.Now.ToLongTimeString()} :: {message} ");
-                        //stream.Flush();
+                            string message = Encoding.Unicode.GetString(data);
+                            Console.WriteLine($"{DateTime.Now.ToLongTimeString()} :: {message} ");
+                            //stream.Flush();
 
-                        data = Encoding.Unicode.GetBytes("Hello, client");
-                        stream.Write(data);
-                        //stream.Flush();
-                        builder.Clear();
-                    }
+                            data = Encoding.Unicode.GetBytes("Hello, client");
+                            stream.Write(data);
+                            //stream.Flush();
+                            builder.Clear();
+                        }
+                    });
                 }
             }
             catch (SocketException ex)
@@ -52,6 +57,7 @@ namespace ChatTcpListener
                 Console.WriteLine(ex.Message);
             }
             finally {
+                stream.Close();
                 tcpListener.Stop();
             }
         }
