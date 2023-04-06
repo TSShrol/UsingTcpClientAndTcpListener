@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatTcpClient", "TcpClient\ChatTcpClient.csproj", "{3DDB5CF1-8608-4461-B32C-E8665313E326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatTcpClient", "ChatTcpClient\ChatTcpClient.csproj", "{692B7A29-FB06-4634-B0A7-625AD47FE264}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatTcpListener", "ChatTcpListenet\ChatTcpListener.csproj", "{1F77D17E-082D-4E56-8C07-2B94C40FC444}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatTcpListener", "ChatTcpListener\ChatTcpListener.csproj", "{D70A5075-B5E4-4420-836A-E94D3F8D551B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3DDB5CF1-8608-4461-B32C-E8665313E326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DDB5CF1-8608-4461-B32C-E8665313E326}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DDB5CF1-8608-4461-B32C-E8665313E326}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DDB5CF1-8608-4461-B32C-E8665313E326}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F77D17E-082D-4E56-8C07-2B94C40FC444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F77D17E-082D-4E56-8C07-2B94C40FC444}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F77D17E-082D-4E56-8C07-2B94C40FC444}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F77D17E-082D-4E56-8C07-2B94C40FC444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{692B7A29-FB06-4634-B0A7-625AD47FE264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{692B7A29-FB06-4634-B0A7-625AD47FE264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{692B7A29-FB06-4634-B0A7-625AD47FE264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{692B7A29-FB06-4634-B0A7-625AD47FE264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D70A5075-B5E4-4420-836A-E94D3F8D551B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D70A5075-B5E4-4420-836A-E94D3F8D551B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D70A5075-B5E4-4420-836A-E94D3F8D551B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D70A5075-B5E4-4420-836A-E94D3F8D551B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
